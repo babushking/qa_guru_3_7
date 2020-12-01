@@ -20,4 +20,16 @@ public class GoogleTests {
         // Проверить, что Selenide появился в результатах поиска
         $("html").shouldHave(Condition.text("selenide.org"));
     }
+    
+    @Test
+    void selenideSearchYandexTest() {
+        // Открыть yandex
+        open("https://yandex.ru");
+
+        // Ввести Selenide в поиск
+        $(byName("text")).setValue("Selenide").pressEnter();
+
+        // Проверить, что Selenide появился в результатах поиска
+        $("html").shouldHave(Condition.text("selenide.org"));
+    }
 }
