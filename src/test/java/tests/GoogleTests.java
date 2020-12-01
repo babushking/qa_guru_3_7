@@ -21,3 +21,18 @@ public class GoogleTests {
         $("html").shouldHave(Condition.text("selenide.org"));
     }
 }
+
+public class YandexTests {
+
+    @Test
+    void selenideSearchYandexTest() {
+        // Открыть yandex
+        open("https://yandex.ru");
+
+        // Ввести Selenide в поиск
+        $(byName("text")).setValue("Selenide").pressEnter();
+
+        // Проверить, что Selenide появился в результатах поиска
+        $("html").shouldHave(Condition.text("selenide.org"));
+    }
+}
